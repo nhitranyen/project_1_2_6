@@ -1,0 +1,152 @@
+/* Intro general */
+.header-top{
+  background-image: url('/img/bg-header-top.svg');
+  background-size: cover;
+  height:107.82px;
+}
+
+
+.article-top{
+}
+
+.article-top-1{
+  width: 15rem;
+  position: absolute;
+  top: 100px;
+}
+.article-top-2{
+  width: 4.5rem;
+  padding-top: 12px;
+  position: absolute;
+  top: 154px;
+}
+
+.article-top-3{
+  width: 10rem;
+  padding-top: 12px;
+  position: absolute;
+  top: 163px;
+  left: 198px;
+}
+
+.article-top-4{
+  width: 5rem;
+  position: absolute;
+  right: 475px;
+  top: 90px;
+}
+.article-top-5{
+  width: 7rem;
+  position: absolute;
+  left: 475px;
+  top: 115px;
+
+}
+.article-top-6{
+  width: 30rem;
+  position: absolute;
+  right: 50px;
+  top: 55px;
+}
+
+.article-top-7{
+  position: absolute;
+  left: 328px;
+  bottom: -100px;
+}
+
+.article-top-8{
+  position: absolute;
+  right: 5px;
+  bottom: -100px;
+}
+
+.article-top-9{
+  width: 5pc;
+  position: absolute;
+  right: 0px;
+  bottom: 240px;
+}
+
+.article-middle-bg-1{
+  position: absolute;
+  width: 46rem;
+  height: 24.7rem;
+  background-color: var(--form-color);
+  top: 265px;
+  border-radius: 25px 25px;
+}
+
+.article-middle-bg-2{
+  position: absolute;
+  width: 22.5rem;
+  height: 24.7rem;
+  background-color: var(--form-color);
+  top: 265px;
+  right: 116px;
+  border-radius: 25px 25px;
+}
+
+.article-middle-3{
+width: 13rem;
+position: absolute;
+top: -35px;
+left: 60px;
+}
+
+.article-middle-4{
+  width: 6rem;
+  position: absolute;
+  right: 428px;
+  top: 265px;
+}
+
+.article-middle-5{
+  width: 12rem;
+  position: absolute;
+  left: -125px;
+  bottom: -80px;
+}
+
+.article-middle-dashed-1{
+  position: absolute;
+  width: 44.5rem;
+  height: 23rem;
+  background-color: var(--dashed-bg-color);
+  top: 15px;
+  left: 11px;
+  border: 5px dashed var(--dashed-color);
+  border-radius: 25px 25px;
+}
+
+.article-middle-dashed-2{
+  position: absolute;
+  width: 21rem;
+  height: 23rem;
+  background-color: var(--dashed-bg-color);
+  top: 16px;
+  right: 10px;
+  border: 5px dashed var(--dashed-color);
+  border-radius: 25px 25px;
+}
+
+.article-middle-dashed-2 form{
+  padding: 0px 15px;
+}
+
+.article-middle-p{
+  color: var(--black-color);
+  padding: 20px 40px;
+}
+
+.article-middle-list{
+  padding: 20px 30px 10px 70px;
+}
+
+.article-middle-list-item{
+  font-weight: 700;
+}
+
+.article-middle-list-item a{
+  color: var(--black-color);
+}
