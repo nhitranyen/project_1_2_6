@@ -15,7 +15,10 @@
 }
 
 * {
+  font-family: Montserrat;
+  font-size: Medium;
   box-sizing: inherit;
+  
 }
 
 html {
@@ -25,16 +28,42 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  color: #FFF;
-  background: var(--background-color);
-  height: 755px;
+.row {
+  margin: 0 !important;
+}
+body{
+  
 }
 
-.bg{
-  background-image: url('/img/bg.png');
-  height: inherit;
-  background-size: 1350px;
+.body-bg {
+  color: #FFF;
+  background: var(--background-color);
+}
+.gradient-bg{
+  color: #FFF;
+  background: var(--background-color);
+  
+}
+
+.bg {
+  background-image: url('/img/bg.png')!important;
+  background-size: cover;
+}
+
+.firework{
+  background-image: url(/img/firework.svg);
+  background-size: cover;
+}
+
+/* Intro general */
+.header-top{
+  background-image: url('/img/bg-header-top.svg');
+  background-size: cover;
+  height:107.82px;
+}
+.nav-link{
+  border: 1px solid var(--white-color);
+  border-radius: 25px;
 }
 
 body::-webkit-scrollbar {
@@ -85,4 +114,13 @@ ul {
   padding: 10px 20px;
   font-size: 2rem;
   color: var(--blue-color);
+}
+
+/* Header - bottom */
+.header-bottom {
+  width: 1285px;
+  margin: 0 auto;
+    background-image: url('/img/bg.png')!important;
+  height: inherit;
+  background-size: cover;
 }

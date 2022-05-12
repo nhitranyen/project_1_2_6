@@ -1,0 +1,22 @@
+.firework{
+    background-image: url(/img/firework.svg);
+    background-size: cover;
+}
+
+.article-main{padding: 5.5% 0;}
+.article-top-1{
+    width: 100%;
+    margin-top: -10%;
+}
+
+.article-top-2{width: 100%;}
+
+.article-top-3{
+    width: 100%;
+    margin-top: -10%;
+}
+
+.card-img{
+    background-size: cover;
+    /* height: 200px; */
+}
