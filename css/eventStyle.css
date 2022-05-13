@@ -20,3 +20,14 @@
     background-size: cover;
     /* height: 200px; */
 }
+
+
+.carousel-control-next,
+.carousel-control-prev{
+  opacity: 3;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover{
+  opacity: 5;
+}
