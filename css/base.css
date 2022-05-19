@@ -61,7 +61,8 @@ body{
   background-size: cover;
   height:107.82px;
 }
-.nav-link{
+
+.active{
   border: 1px solid var(--white-color);
   border-radius: 25px;
 }

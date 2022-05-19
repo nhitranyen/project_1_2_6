@@ -24,14 +24,14 @@
                         <div style="width: 15rem;"></div>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto text-capitalize">
-                                <li class="nav-item active mx-4">
+                                <li class="nav-item mx-4">
                                     <a class="nav-link px-4 text-white" href="home.html">trang chủ<span
                                             class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item mx-4">
                                     <a class="nav-link px-4 text-white" href="events.html">sự kiện</a>
                                 </li>
-                                <li class="nav-item mx-4">
+                                <li class="nav-item active mx-4">
                                     <a class="nav-link px-4 text-white" href="contact.html">liên hệ</a>
                                 </li>
                         </div>
@@ -60,7 +60,7 @@
                     <div class="container">
                         <div class="row">
                                 <div class="col-sm-7">
-                                    <form>
+                                    <form method="post" id="myForm">
                                         <div class="article-middle-bg-1 px-3 py-2">
                                             <div class="article-middle-dashed-1 px-4 py-3">
                                                 <p class="text-dark my-1 mx-3" style="text-align: justify;">Lorem ipsum dolor consectetur adipisicing elit. Repudiandae, nisi minus?
@@ -79,18 +79,20 @@
                                                 </div>
                                                 <div class="form-row d-flex my-3 mx-3">
                                                     <div class="form-group col-md-4" style="margin-right:1.5rem;">
-                                                        <input type="tel" class="form-control" id="inputEmail4" placeholder="Số điện thoại">
+                                                        <input type="tel" name="ten" class="form-control" id="inputEmail4" placeholder="Số điện thoại">
                                                     </div>
                                                     <div class="form-group mx-3 col-md-7">
                                                         <div class="d-flex">
-                                                            <input type="text" min="1" class="form-control" id="inputDate" placeholder="Địa chỉ">
+                                                            <input type="text" name="diaChi" min="1" class="form-control" id="inputDate" placeholder="Địa chỉ">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group mx-3">
-                                                    <textarea class="col-md-12 p-2 form-control" class="form-control" name="" id="" rows="2">Lời nhắn</textarea>
+                                                    <textarea class="col-md-12 p-2 form-control" name="mess" class="form-control" name="" id="" rows="2">Lời nhắn</textarea>
                                                 </div>
-                                                <button type="submit" class="btn" style="margin-left: 4rem;"><img src="/img/gui-lien-he.svg" style="width: 80%;" alt=""></button>
+                                                <button type="submit" class="btn" style="margin-left: 4rem;">
+                                                    <img src="/img/gui-lien-he.svg" style="width: 80%;" alt="">
+                                                </button>
                                             </div>
                                         </div>
                                     </form>
@@ -128,10 +130,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="messenger" id="mess">
+                        <div class="alert bg-light text-dark col-sm-3">
+                            <span class="closebtn text-danger h2" style="float: right;cursor: pointer;" onclick="offMess()">&times;</span> 
+                            <br>
+                            <h5>Gửi liên hệ thành công</h5>
+                            <p class="pb-4">Chúng tôi sẽ phản hồi bạn sớm nhất có thể.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="js/mess.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/swiper.js"></script>

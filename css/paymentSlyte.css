@@ -103,7 +103,7 @@ label{
 box-shadow: 0px -2px 1px 1px rgb(178 91 11 / 30%);
 }
 
-.date::-webkit-calendar-picker-indicator {
+/* .date::-webkit-calendar-picker-indicator {
   display: none;
 }
 
@@ -111,4 +111,66 @@ box-shadow: 0px -2px 1px 1px rgb(178 91 11 / 30%);
   transform: translateX(20rem);
   position: absolute;
   z-index: 10;
+} */
+
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  z-index: 11;
+  width: 30px;
+  height: 30px;
+}
+
+.date-wrap {
+  position: relative;
+  width: 200px;
+}
+
+.date-wrap::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  display: block;
+  background-color: #FFDE32;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+.date-wrap::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/calendar2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.form-hihi {
+  /* box-shadow: none !important;
+  border: none !important; */
+  background-color: rgba(0,0,0,0);
+}
+
+.form-hihi:focus {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+input[type="date" i] {
+  overflow: unset;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  box-shadow: 0px -2px 1px 1px rgb(178 91 11 / 30%) !important;
+  background-color: #fff;
+  padding: 6px 12px;
+  border-radius: .25rem;
+  width: 134px;
 }
