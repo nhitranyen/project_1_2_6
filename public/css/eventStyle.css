@@ -1,0 +1,94 @@
+.firework {
+  background-image: url(/img/firework.svg);
+  background-size: cover;
+}
+
+.article-main {
+  padding: 5.5% 0;
+}
+
+.article-top-1 {
+  width: 100%;
+  margin-top: -10%;
+}
+
+.article-top-2 {
+  width: 100%;
+}
+
+.article-top-3 {
+  width: 100%;
+  margin-top: -10%;
+}
+
+.card-img {
+  background-size: cover;
+  /* height: 200px; */
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  opacity: 1 !important;
+}
+
+.mySlides {
+  display: none
+}
+
+
+.slider {
+  width: 100%;
+  height: 355px;
+  position: relative;
+  margin: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider .slide {
+  display: flex;
+  position: absolute;
+  left: 0;
+  transition: 0.3s left ease-in-out;
+}
+
+.slider .item {
+  margin-right: 10px;
+}
+
+.slider .item:last-child {
+  margin-right: 0;
+}
+
+.ctrl {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.ctrl-btn {
+  padding: 20px 20px;
+  min-width: 50px;
+  border: none;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+
+  position: absolute;
+  top: 30%;
+  margin-top: -27.5px;
+}
+
+.ctrl-btn.pro-prev {
+  left: -22px;
+}
+
+.ctrl-btn.pro-next {
+  right: -20px;
+}
