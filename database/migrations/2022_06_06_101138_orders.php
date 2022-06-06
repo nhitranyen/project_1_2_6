@@ -15,18 +15,14 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->integer('event_id');
+            $table->integer('amount');
+            $table->date('date');
+            $table->string('phone',20);
+            $table->string('email',150)->unique();
             $table->string('name',30);
             $table->timestamps();
         });
-
-        Schema::table('orders', function (Blueprint $table) {
-            $table->string('option',30);
-            $table->integer('amount');
-            $table->timestamps('date');
-            $table->string('phone',20);
-            $table->string('email',150)->unique();
-        });
-
     }
 
     /**
@@ -36,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ticket');
+        //
     }
 };

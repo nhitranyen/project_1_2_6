@@ -3,23 +3,28 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Redirect;
 use App\Models\Orders;
+use App\Models\Events;
+use Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use phpDocumentor\Reflection\DocBlock\Tags\See;
 
 class HomeController extends Controller
 {
-    public function __construct(){
 
-    }
 
     public function index()
     {
-        return view('home');
+        $data = new Events(); 
+        $event = $data->all();
+       
+        return view('home',compact('event'));
     }
 
-    public function orders(Request $data){
-        $validate= $data->validate([
+    public function orders(Request $request){
+        $validate= $request->validate([
    
             'amount'=>['required'],
             'date'=>['required'],
@@ -40,47 +45,56 @@ class HomeController extends Controller
                  
         ]);
 
-        $data = [      
-            'option' => $data['option'],
-            'amount' => $data['email'],
-            'date' => $data['date'],
-            'name' => $data['name'],
-            'phone' =>$data['phone'],
-            'email' =>$data['email'],
+        $data = array();
 
-        ];
+            $data['event_id'] = $request->event_id;
+            $data['amount'] = $request->amount;
+            $data['date'] = $request->date;
+            $data['name'] = $request->name;
+            $data['phone'] = $request->phone;
+            $data['email'] = $request->email;
+            $data['created_at'] = now();
+            $data['updated_at'] = now();
+        
+        $id = DB::table('orders')->insertGetId($data);
+
+        $request->session()->put('id', $id);
+        $request->session()->put('price', $request->event_id);
+        $request->session()->put('amount', $request->amount);
+        $request->session()->put('date', $request->date);
+        $request->session()->put('name', $request->name);
+        $request->session()->put('phone', $request->phone);
+        $request->session()->put('email', $request->email);
       
-        return redirect('/payment',compact('data'));
+        return view('payment');
     }
-    public function orders_save(Request $data){
-        var_dump($data);
-        exit();
-        $validate= $data->validate([
+    public function orders_save(Request $request){
+        // $validate= $data->validate([
    
-            'number'=>['required'],
-            'ten'=>['required','min:5'],
-            'ngay'=>['required'],
-            'CVV'=>['required'],
+        //     'number'=>['required'],
+        //     'ten'=>['required','min:5'],
+        //     'ngay'=>['required'],
+        //     'CVV'=>['required'],
 
-        ],
+        // ],
         
-        [
-            'number.required'=>'Số thẻ không được bỏ trống',
-            'ten.required'=>'Họ tên không được bỏ trống',  
-            'ten.min'=>'Họ tên ít nhất 6 ký tự',
-            'ngay.required'=>'Số điện thoại không được bỏ trống',
-            'CVV.required'=>'email không được bỏ trống',
-        ]);
+        // [
+        //     'number.required'=>'Số thẻ không được bỏ trống',
+        //     'ten.required'=>'Họ tên không được bỏ trống',  
+        //     'ten.min'=>'Họ tên ít nhất 6 ký tự',
+        //     'ngay.required'=>'Số điện thoại không được bỏ trống',
+        //     'CVV.required'=>'email không được bỏ trống',
+        // ]);
 
-        [      
-            'number' => $data['number'],
-            'ten' => $data['ten'],
-            'ngay' => $data['ngay'],
-            'CVV' => $data['CVV'],
+        // [      
+        //     'number' => $data['number'],
+        //     'ten' => $data['ten'],
+        //     'ngay' => $data['ngay'],
+        //     'CVV' => $data['CVV'],
 
-        ];
+        // ];
         
-        return redirect('payment',compact('data'));
+        return redirect('payment-success',compact('data'));
     }
 
     public function contact()
@@ -108,17 +122,19 @@ class HomeController extends Controller
            'comment.required'=>'Lời nhắn không được trống'
         ]);
 
-            Mail::send('home',[
+            Mail::send('noidungmail',[
                 'name' => $data['name'],
                 'email' => $data['email'],
-                'password' => $data['password'],
-                
+                'phone' => $data['phone'],
+                'address' => $data['addpress'],
+                'comment' => $data['comment']
+
             ],function($mail) use ($data){
-                $mail->to($data['email'],$data['name']);
-                $mail->from($data['email']);
-                $mail->subject('Gởi Mail thành công');
+                $mail->to('nhitty28@gmail.com','nhitty28@gmail.com');
+                $mail->from('nhitty28@gmail.com');
+                $mail->subject('THƯ GÓP Ý CỦA KHÁCH HÀNG');
             });
 
-            return redirect('/home')->withSuccess('Gởi Mail thành công');
+            return redirect('/home')->withSuccess('Gửi liên hệ thành công.Chúng tôi sẽ phản hồi bạn sớm nhất có thể.');
     }
 }

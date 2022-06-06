@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('img',100);
             $table->string('name',30);
-            $table->timestamps('start_date');
-            $table->timestamps('end_date');
+            $table->timestamps();
         });
     }
 

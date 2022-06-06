@@ -64,65 +64,54 @@
                                     <div class="article-middle-dashed-1 px-4 py-3">
                                         <img class="article-middle-2" src="/img/thongtingiadinh.svg" alt="">
                                         <img class="article-middle-5" src="/img/Trini_Arnold_Votay1 2.svg" alt="">
-
+                                        @if(Session::has('id'))
+                                            <input type="hidden" name="id" value="{{Session::get('id')}}">
+                                        @endif
                                         <div class="form-row d-flex my-2 mx-3">
                                             <div class="form-group col-md-4">
-                                                <label class="text-dark pb-2" value="{{old('option')}}" name="option" for="exampleFormControlSelect1">Số tiền thanh toán</label>
-                                                <input type="number" class="form-control" id="inputEmail4" value="{{$data->amount}}">
-                                                @error('option')
-                                                    <div class="text-danger">{{ $message }}</div>
-                                                @enderror
+                                                <label class="text-dark pb-2" name="option" for="exampleFormControlSelect1">Số tiền thanh toán</label>
+                                                <input type="text" class="form-control" id="inputEmail4"  value="{{number_format(Session::get('amount')*Session::get('price'))}} VND">
+                                        
                                             </div>
                                             <div class="form-group mx-3 col-md-3">
                                                 <label class="text-dark pb-2" for="exampleFormControlSelect1">Số lượng vé</label>
                                                 <div class="d-flex">
-                                                    <input type="number" min="1" class="form-control" id="inputDate" placeholder="7">
+                                                    <input type="number" min="1" value="{{Session::get('amount')}}" class="form-control" id="inputDate" placeholder="7">
                                                     <span class="text-dark" style="line-height:30px; padding-left:5px ;">Vé</span>
                                                 </div>
-                                                @error('option')
-                                                    <div class="text-danger">{{ $message }}</div>
-                                                @enderror
+                                        
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label class="text-dark pb-2" for="exampleFormControlSelect1">Ngày sử dụng</label>
-                                                <input type="date" class="form-control date" id="inputDate" placeholder="Ngày sử dụng" format="DD/MM/YYYY">
-                                                @error('option')
-                                                    <div class="text-danger">{{ $message }}</div>
-                                                @enderror
+                                                <input type="date" class="form-control date" id="inputDate" placeholder="Ngày sử dụng" style="padding: 0 !important;" value="{{Session::get('date')}}" format="DD/MM/YYYY">
+                                            
                                             </div>
                                         </div>
                                         <div class="form-group my-2 mx-3">
                                             <label class="text-dark pb-2" for="exampleFormControlSelect1">Thông tin liên hệ</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="Nguyễn Văn A">
-                                            @error('option')
-                                                <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <input type="text" class="form-control" id="inputAddress" value="{{Session::get('name')}}">
+                                        
                                         </div>
                                         <div class="form-group my-2 mx-3">
                                             <label class="text-dark pb-2" for="exampleFormControlSelect1">Điện thoại</label>
-                                            <input type="text" class="form-control" id="inputAddress2" placeholder="0123456789">
-                                            @error('option')
-                                                <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <input type="text" class="form-control" id="inputAddress2" value="{{Session::get('phone')}}">
+                                        
                                         </div>
                                         <div class="form-group my-2 mx-3">
                                             <label class="text-dark pb-2" for="exampleFormControlSelect1">Email</label>
-                                            <input type="email" class="form-control" id="inputAddress2" placeholder="a.nguyen@gmail.com">
-                                            @error('option')
-                                                <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <input type="email" class="form-control" id="inputAddress2" value="{{Session::get('email')}}">
+                                        
                                         </div>
                                         <div style="height:60px"></div>
                                     </div>
                                 </div>
                             </div>
+                       
                             <div class="col-sm-5">
                                 <img class="article-middle-4" src="/img/Vector-cycle.svg" alt="">
                                 <div class="article-middle-bg-2 px-3 py-2">
                                     <div class="article-middle-dashed-2">
                                         <img class="article-middle-3" src="/img/thongtinthanhtoan.svg" alt="">
-
-
                                         <div class="form-group my-2 mx-3">
                                             <label class="text-dark pb-2" for="exampleFormControlSelect1">Số thẻ</label>
                                             <input type="text" class="form-control" name="number" id="inputAddress" placeholder="123 456 789">

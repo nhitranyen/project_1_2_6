@@ -19,8 +19,8 @@ class EventController extends Controller
     } 
 
     public function detail($id){
-        $event=DB::table('event')
-        ->select('event.*')
+        $event=DB::table('events')
+        ->select('events.*')
         ->where('id','=',$id)
         ->first();
 

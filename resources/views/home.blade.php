@@ -101,11 +101,13 @@
                                     <div class="article-middle-dashed-2">
                                         <img class="article-middle-3" src="/img/ticket.svg" alt="">
                                         <div style="height:20px"></div>
-                                        <form action="/orders" method="get" enctype="multipart/form-data">
+                                        <form action="/orders" method="post" enctype="multipart/form-data" >
+                                            @csrf
                                             <div class="form-group col-md-11 my-2 mx-3">
-                                                <select class="form-select" value="{{old('option')}}" name="option" aria-label="Default select example">
-                                                    <option value="Gói Cá Nhân">Gói Cá Nhân</option>
-                                                    <option value="Gói Gia Đình">Gói Gia Đình</option>
+                                                <select class="form-select" name="event_id" aria-label="Default select example">
+                                                    @foreach($event as $item)
+                                                        <option value="{{$item->price}}">{{$item->title}}</option>
+                                                    @endforeach
                                                 </select>
                                                 @error('option')
                                                     <div class="text-danger">{{ $message }}</div>

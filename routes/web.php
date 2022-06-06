@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/home',[App\Http\Controllers\HomeController::class, 'index']);
 
-Route::get('/orders',[App\Http\Controllers\HomeController::class, 'orders']);
+Route::post('/orders',[App\Http\Controllers\HomeController::class, 'orders']);
 
 Route::get('/orders-save',[App\Http\Controllers\HomeController::class, 'orders_save']);
 

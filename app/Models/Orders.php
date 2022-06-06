@@ -13,10 +13,14 @@ class Orders extends Model
     protected $table = 'orders';
     protected $fillable = [
         
-        'img',
+        'option',
+        'amount',
+        'date',
         'name',
-        'start_date',
-        'end_date',
+        'phone',
+        'email',
+        'create_at',
+        'update_at',
         
     ];
 }
